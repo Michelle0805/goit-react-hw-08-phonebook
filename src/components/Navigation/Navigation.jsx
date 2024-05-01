@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../redux/hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/auth/authOperations';
+import css from './Navigation.module.css';
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
@@ -17,7 +18,7 @@ export const Navigation = () => {
           Log Out
         </NavLink>
       ) : (
-        <div>
+        <div className={css.nav}>
           <NavLink to="/register">Register</NavLink>
           <NavLink to="/login">Log In</NavLink>
         </div>
