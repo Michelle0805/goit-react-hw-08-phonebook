@@ -16,18 +16,20 @@ export const App = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { isRefreshing } = useAuth();
+  const { isRefreshing, user, token} = useAuth;
 
   useEffect(() => {
-    dispatch(refreshUser());
-    navigate('/contacts');
-  }, [dispatch, navigate]);
+    if (token && user.name === null && user.email === null) {
+      dispatch(refreshUser());
+      navigate('/contacts');
+    }
+  }, [dispatch, navigate, token, user]);
 
   return isRefreshing ? (
     <h1>Refreshing user... Please wait...</h1>
   ) : (
     <>
-      <Routes>
+    <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
           <Route
@@ -57,6 +59,7 @@ export const App = () => {
           />
         </Route>
       </Routes>
+      
     </>
   );
 };
