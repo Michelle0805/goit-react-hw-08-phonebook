@@ -18,9 +18,9 @@ export const Navigation = () => {
           Log Out
         </NavLink>
       ) : (
-        <div className={css.nav}>
-          <NavLink to="/register">Register</NavLink>
-          <NavLink to="/login">Log In</NavLink>
+        <div className={css.nav}> 
+          <NavLink to="/register" className={({ isActive}) => (isActive? css.linkActive : css.link)}>Register</NavLink>
+          <NavLink to="/login" className={({ isActive}) => (isActive? css.linkActive : css.link)}>Log In</NavLink>
         </div>
       )}
     </nav>

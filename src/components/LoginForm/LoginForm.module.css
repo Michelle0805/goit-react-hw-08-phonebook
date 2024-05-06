@@ -1,17 +1,23 @@
 .form {
-    width: 300px;
-    /* margin-top: 20px; */
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding: 10px 80px ;
   }
   
   .label {
     display: flex;
     flex-direction: column;
-    /* margin-bottom: 16px; */
+    margin-bottom: 20px;
   }
   
   .loginFormInput {
-    margin-top: 5px;
-    width: 300px;
+    margin-top: 10px;
+    border: 2px solid #b2b6bb;
+    outline: none;
+    border-radius: 5px;
+    /* width: 300px; */
     height: 30px;
     transition: border 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
   }
@@ -19,11 +25,16 @@
   .loginFormInput:hover,
   .loginFormInput:active {
     outline: none;
-    border: 2px solid #1a71ce;
+    border: 1px solid #1a71ce;
+    text-indent: 5px;
   }
   
   .loginFormBtn {
+    margin-top: 30px;
     padding: 5px 10px;
+    border: 1px solid #b2b6bb;
+    width: 150px;
+    height: 40px;
     transition: border-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
       background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
       color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
