@@ -16,7 +16,8 @@
 .link {
     text-decoration: none;
     color: black;
-    font-size: larger;
+    font-size: larger ;
+    font-weight: lighter;
 }
 
 .linkActive {
@@ -24,4 +25,10 @@
     font-weight: 500px;
     text-decoration: none;
     font-size: larger;
+}
+
+.link:hover {
+    color: #0056b3;
+    font-weight: bold;
+    
 }

@@ -14,7 +14,7 @@ export const Navigation = () => {
   return (
     <nav>
       {isLoggedIn ? (
-        <NavLink to="/logout" onClick={handleLogout}>
+        <NavLink to="/logout" onClick={handleLogout} className={css.link}>
           Log Out
         </NavLink>
       ) : (

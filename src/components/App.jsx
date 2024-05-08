@@ -14,16 +14,14 @@ import { refreshUser } from '../redux/auth/authOperations';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+ 
 
-  const { isRefreshing, user, token} = useAuth;
+  const { isRefreshing} = useAuth;
 
   useEffect(() => {
-    if (token && user.name === null && user.email === null) {
       dispatch(refreshUser());
-      navigate('/contacts');
-    }
-  }, [dispatch, navigate, token, user]);
+     
+  }, [dispatch]);
 
   return isRefreshing ? (
     <h1>Refreshing user... Please wait...</h1>
